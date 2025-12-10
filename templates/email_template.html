@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <body>
+    {% if action == 'received' %}
+      <p>Dear {{ applicant.full_name }},</p>
+      <p>We have received your application. Your application ID is <strong>{{ applicant.id }}</strong>.</p>
+      <p>We will review it and notify you when there's an update.</p>
+      <p>Regards,<br/>Admissions Team</p>
+    {% elif action == 'approved' %}
+      <p>Dear {{ applicant.full_name }},</p>
+      <p>Congratulations! Your application (ID: <strong>{{ applicant.id }}</strong>) has been <strong>approved</strong>.</p>
+      <p>Note from admin: {{ applicant.admin_note or "—" }}</p>
+      <p>Regards,<br/>Admissions Team</p>
+    {% elif action == 'rejected' %}
+      <p>Dear {{ applicant.full_name }},</p>
+      <p>We regret to inform you that your application (ID: <strong>{{ applicant.id }}</strong>) was not accepted.</p>
+      <p>Note from admin: {{ applicant.admin_note or "—" }}</p>
+      <p>Regards,<br/>Admissions Team</p>
+    {% endif %}
+  </body>
+</html>
