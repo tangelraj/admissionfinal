@@ -1,1 +1,9 @@
-web: gunicorn admission:app
+Flask
+gunicorn
+Flask-Login
+Flask-Mail
+Flask-SQLAlchemy
+email-validator
+pymysql
+
+
